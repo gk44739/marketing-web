@@ -87,15 +87,40 @@ textarea {
    Author's custom styles
    ========================================================================== */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,700;1,100;1,400;1,600;1,700&display=swap");
+/* width */
+*::-webkit-scrollbar {
+  width: 6px;
+}
 
+/* Track */
+*::-webkit-scrollbar-track {
+  background: #000000;
+  cursor: pointer;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  border: 2px solid #e9204f;
+  background: #e9204f;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
 body {
   font-family: "Montserrat", sans-serif;
+  background-color: #000000;
 }
-.landingSlider {
-  width: 100%;
-  height: 100vh;
-}
+/* Header */
 header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
   background-color: #000;
   padding: 20px 0px;
 }
@@ -132,6 +157,150 @@ header .headerInner {
 .hamburgerMenu {
   display: none;
 }
+/* End Header */
+.landingSlliderWrapper {
+  position: relative;
+  height: 100vh;
+}
+.landingSlider {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+}
+.landingSlider .swiper-pagination-progressbar {
+  top: 60%;
+}
+.landingSlider .swiper-pagination-progressbar {
+  background: none;
+}
+.landingSlider
+  .swiper-pagination-progressbar
+  .swiper-pagination-progressbar-fill {
+  background: #e9204f;
+}
+.landingSlider .swiper-button-prev,
+.landingSlider .swiper-button-next {
+  color: #e9204f;
+}
+.landingSlideHolder {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.landingSlideHolder .landingHeroImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.landingSlideHolder .landingHero {
+  width: 100%;
+  height: 100%;
+}
+.landingSlideHolder .landingHero h1 {
+  color: #ffffff;
+  font-size: 70px;
+  font-weight: bold;
+}
+.landingSlideHolder .landingHero a {
+  position: relative;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 15px 70px;
+  border: 2px solid #e9204f;
+}
+.landingSlideHolder .landingHero a::after {
+  content: "";
+  width: 0px;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  background-color: #e9204f;
+  transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
+  z-index: -1;
+}
+.landingSlideHolder .landingHero a:hover::after {
+  width: 100%;
+}
+.landingSliderBoxesHolder {
+  position: absolute;
+  width: 100%;
+  bottom: -10px;
+  left: 0;
+  z-index: 1;
+}
+.landingSliderBoxesHolder::before {
+  content: "";
+  height: 30px;
+  width: 2px;
+  background-color: #e9204f;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.landingSliderBoxesHolder .landingSliderBox {
+  background-color: #1b1b1b;
+  padding: 60px 40px;
+  color: #ffffff;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+.landingSliderBoxesHolder .landingSliderBox.last::before {
+  content: "";
+  position: absolute;
+  right: -100px;
+  bottom: -50px;
+  width: 100%;
+  height: 100px;
+  background-color: #e9204f;
+}
+.landingSliderBoxesHolder .landingSliderBox.active,
+.landingSliderBoxesHolder .landingSliderBox:hover {
+  background-color: #e9204f;
+}
+.landingSliderBoxesHolder .landingSliderBox .iconHolder {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+.landingSliderBoxesHolder .landingSliderBox .iconHolder svg {
+  fill: #e9204f;
+  transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+
+.landingSliderBoxesHolder .landingSliderBox.active .iconHolder svg,
+.landingSliderBoxesHolder .landingSliderBox:hover .iconHolder svg {
+  fill: #ffffff;
+}
+.landingSliderBoxesHolder .landingSliderBox h3 {
+  position: relative;
+  margin-bottom: 50px;
+}
+.landingSliderBoxesHolder .landingSliderBox h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 50px;
+  height: 2px;
+  background-color: #e9204f;
+  transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+.landingSliderBoxesHolder .landingSliderBox.active h3::after,
+.landingSliderBoxesHolder .landingSliderBox:hover h3::after {
+  background-color: #ffffff;
+}
+.sectionOne{
+  min-height: 100vh;
+}
+
 
 /* ===========FOOTER======= */
 
