@@ -114,6 +114,9 @@ body {
   font-family: "Montserrat", sans-serif;
   background-color: #000000;
 }
+body.navActive {
+  overflow: hidden;
+}
 /* Header */
 header {
   position: fixed;
@@ -129,16 +132,22 @@ header .headerInner {
   flex-direction: row;
   justify-content: space-between;
 }
-header .headerInner .headerLogo {
+header .headerInner .headerLogo a{
+  display: block;
   width: 180px;
   height: 80px;
 }
 header .headerInner .headerLogo svg {
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 header .headerInner .headerLogo svg path {
   fill: #ffffff;
+  transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+header .headerInner .headerLogo svg:hover path{
+  fill: #e9204f;
 }
 nav {
   display: flex;
@@ -189,6 +198,8 @@ nav ul li a:hover::before {
   width: 35px;
 }
 .hamburgerMenu {
+  position: relative;
+  z-index: 200;
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -222,7 +233,8 @@ nav ul li a:hover::before {
 /* End Header */
 .landingSlliderWrapper {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
+  padding-top: 120px;
 }
 .landingSlider {
   width: 100%;
@@ -230,8 +242,8 @@ nav ul li a:hover::before {
   background-color: #000000;
 }
 .landingSlider .swiper-pagination-progressbar {
-  top: 55%;
-  transform: translateY(-55%);
+  top: 60%;
+  transform: translateY(-60%);
 }
 .landingSlider .swiper-pagination-progressbar {
   background: none;
@@ -259,6 +271,7 @@ nav ul li a:hover::before {
   object-position: center;
 }
 .landingSlideHolder .landingHero {
+  display: block;
   width: 100%;
   height: 100%;
 }
@@ -302,7 +315,7 @@ nav ul li a:hover::before {
   width: 2px;
   background-color: #e9204f;
   position: absolute;
-  bottom: -20px;
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -314,7 +327,7 @@ nav ul li a:hover::before {
   padding: 60px 40px;
   color: #ffffff;
   cursor: pointer;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 .landingSliderBoxesHolder .landingSliderBox.last::before {
@@ -385,16 +398,30 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  flex-wrap: wrap;
+  padding: 20px;
 }
-.footerLinks svg {
-  width: 40px;
-  height: 40px;
-  padding: 5px;
+.footerLinks a {
+  position: relative;
+  bottom: 0;
   border: 2px solid #e9204f;
-  border-radius: 25px;
+  border-radius: 50%;
+  margin: 10px;
+  padding: 5px;
+  transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+.footerLinks a:hover {
+  bottom: 10px;
+}
+.footerLinks a:hover svg {
+  fill: #e9204f;
+}
+.footerLinks a svg {
+  width: 20px;
+  height: 20px;
   fill: white;
   margin: 5px;
+  transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 
 .h1Footer {
@@ -412,17 +439,27 @@ footer {
   margin-bottom: 40px;
 }
 .buttonFooter button {
+  position: relative;
+  z-index: 1;
   border: 2px solid #e9204f;
-  background-color: black;
-  border-radius: 5px;
-  width: 200px;
+  background: transparent;
+  padding: 10px 40px;
   height: 50px;
   color: white;
 }
-.buttonFooter button:hover {
+.buttonFooter button::before{
+  content: '';
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: -1;
+  width: 0px;
+  height: 100%;
   background-color: #e9204f;
-  transition: 0.1s ease-in-out;
-  transition-property: color, background-color, border-color;
+  transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+.buttonFooter button:hover::before{
+  width: 100%;
 }
 
 .content2Footer {

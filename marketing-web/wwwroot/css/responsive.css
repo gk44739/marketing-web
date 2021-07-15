@@ -1,11 +1,18 @@
-@media (max-width: 576px) {
-    .landingSliderBoxesHolder .landingSliderBox.last::before{
-        right: -15px;
-    }
+
+@media (max-width: 1400px) {
+
 }
 
 @media (max-width: 768px) {
-
+    .landingSlideHolder .landingHero{
+        padding-bottom: 50px;
+    }
+    .landingSlideHolder .landingHero h1{
+        font-size: 50px;
+    }
+    .landingSlideHolder .landingHero a{
+        padding: 15px 40px;
+    }
 }
 
 @media (max-width: 992px) {
@@ -31,7 +38,10 @@
         flex-direction: column;
     }
     nav ul li{
-        padding-bottom: 20px;
+        padding-bottom: 40px;
+    }
+    nav ul li a{
+        font-size: 30px;
     }
     .hamburgerMenu{
         display: flex;
@@ -45,7 +55,6 @@
 @media (max-width: 1200px) {
     .landingSlideHolder {
         align-items: flex-start;
-        padding-top: 140px;
     }
     .landingSlider .swiper-pagination-progressbar {
         top: 65%;
@@ -63,6 +72,22 @@
     }
 }
 
-@media (max-width: 1400px) {
-
+@media (max-width: 576px) {
+    nav ul li{
+        padding-bottom: 20px;
+    }
+    .landingSliderBoxesHolder .landingSliderBox.last::before{
+        right: -15px;
+    }
+    .landingSlideHolder .landingHero{
+        text-align: center;
+    }
+    .landingSlideHolder .landingHero h1{
+        font-size: 30px;
+    }
+    .landingSliderBoxesHolder::before{
+        left: 35%;
+        transform: translateX(-35%);
+    }
 }
+
