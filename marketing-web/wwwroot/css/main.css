@@ -121,7 +121,7 @@ header {
   top: 0;
   left: 0;
   z-index: 9999;
-  background-color: #000;
+  background-color: #000000;
   padding: 20px 0px;
 }
 header .headerInner {
@@ -129,7 +129,18 @@ header .headerInner {
   flex-direction: row;
   justify-content: space-between;
 }
-.navbar {
+header .headerInner .headerLogo{
+  width: 180px;
+  height: 80px;
+}
+header .headerInner .headerLogo svg {
+  width: 100%;
+  height: 100%;
+}
+header .headerInner .headerLogo svg path{
+  fill: #ffffff;
+}
+nav {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,20 +153,71 @@ header .headerInner {
   margin: 0px;
   padding: 0px;
 }
-.navbar ul li {
-  margin: 0px 15px;
+nav ul li {
+  padding: 0px 15px;
 }
-.navbar ul li a {
+nav ul li:last-child{
+  padding-right: 0px;
+}
+nav ul li a {
+  position: relative;
   color: #ffff;
   text-decoration: none;
 }
-
-.navbar ul li a:hover {
-  border-bottom: 1px solid red;
-  border-width: 20%;
+nav ul li a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+nav ul li a.active::before,
+nav ul li a::before {
+  content: '';
+  width: 0px;
+  height: 2px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: -4px;
+  left: 0px;
+  background-color: #ffffff;
+  transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+nav ul li a.active::before{
+  background-color: #e9204f;
+  width: 35px;
+}
+nav ul li a:hover::before {
+  background-color: #e9204f;
+  width: 35px;
 }
 .hamburgerMenu {
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+.hamburgerMenu span{
+  display: block;
+  width: 40px;
+  height: 4px;
+  margin: 4px 0;
+  border-radius: 10px;
+  background-color: #e9204f;
+  transition: all 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+.hamburgerMenu span:nth-child(2){
+  width: 30px;
+}
+.hamburgerMenu.active span:nth-child(1){
+  transform: rotate(45deg);
+  margin-bottom: -16px;
+}
+.hamburgerMenu.active span:nth-child(2){
+  visibility: hidden;
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+}
+.hamburgerMenu.active span:nth-child(3){
+  transform: rotate(-45deg);
 }
 /* End Header */
 .landingSlliderWrapper {
@@ -168,7 +230,8 @@ header .headerInner {
   background-color: #000000;
 }
 .landingSlider .swiper-pagination-progressbar {
-  top: 60%;
+  top: 55%;
+  transform: translateY(-55%);
 }
 .landingSlider .swiper-pagination-progressbar {
   background: none;
@@ -206,6 +269,7 @@ header .headerInner {
 }
 .landingSlideHolder .landingHero a {
   position: relative;
+  display: inline-block;
   color: #ffffff;
   font-weight: bold;
   text-decoration: none;
@@ -244,6 +308,8 @@ header .headerInner {
 }
 
 .landingSliderBoxesHolder .landingSliderBox {
+  position: relative;
+  z-index: 1;
   background-color: #1b1b1b;
   padding: 60px 40px;
   color: #ffffff;
@@ -254,11 +320,12 @@ header .headerInner {
 .landingSliderBoxesHolder .landingSliderBox.last::before {
   content: "";
   position: absolute;
-  right: -100px;
+  right: -20px;
   bottom: -50px;
-  width: 100%;
+  width: 200px;
   height: 100px;
   background-color: #e9204f;
+  z-index: 2;
 }
 .landingSliderBoxesHolder .landingSliderBox.active,
 .landingSliderBoxesHolder .landingSliderBox:hover {

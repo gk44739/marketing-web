@@ -1,0 +1,68 @@
+@media (max-width: 576px) {
+    .landingSliderBoxesHolder .landingSliderBox.last::before{
+        right: -15px;
+    }
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 992px) {
+    nav {
+        flex-direction: column;
+        position: absolute;
+        top: -100%;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        height: 100vh;
+        background-color: #000000;
+        visibility: hidden;
+        opacity: 0;
+        transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
+    }
+    nav.active{
+        top:0;
+        visibility: visible;
+        opacity: 1;
+    }
+    nav .linksNavbar{
+        flex-direction: column;
+    }
+    nav ul li{
+        padding-bottom: 20px;
+    }
+    .hamburgerMenu{
+        display: flex;
+    }
+    .landingSliderBoxesHolder {
+        position: relative;
+        bottom: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    .landingSlideHolder {
+        align-items: flex-start;
+        padding-top: 140px;
+    }
+    .landingSlider .swiper-pagination-progressbar {
+        top: 65%;
+        transform: translateY(-65%);
+    }
+    .landingSliderBoxesHolder .landingSliderBox{
+        padding: 40px;
+    }
+    .landingSliderBoxesHolder .landingSliderBox h3{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .landingSliderBoxesHolder .landingSliderBox p{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1400px) {
+
+}
