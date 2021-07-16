@@ -395,12 +395,97 @@ nav ul li a:hover::before {
 .sectionFour {
   min-height: 100vh;
 }
+/* Section One */
+
+.sectionOne{
+    background: white;
+}
+
+.sectionOneBox {
+    padding: 35px 25px;
+    background: #F3F3F3;
+    cursor: pointer;
+    transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
+    position: relative;
+}
+.sectionOneTitle{
+    position: relative;
+}
+
+.sectionOneTitle::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height:2px;
+    background: #e9204f;
+}
+
+.sectionOneTitle{
+    margin-bottom: 40px;
+}
+
+.sectionOneTitle h1{
+    font-size: 50px;
+    color: black;
+}
+
+.sectionOneTitle span{
+    color: #e9204f;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.sectionOneBox::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%) scale(0);
+    background-image: url(../img/digitalPlus.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+.sectionOneBox:hover::before {
+    transform: translateY(-50%) scale(1);
+}
+
+
+.sectionOneBox:hover {
+    background: #E9204F;
+}
+.sectionOneBox:hover .arrow-icon svg{
+    fill: white;
+}
+
+.sectionOneBox:hover .sectionOneBoxText{
+    color: white;
+    padding-left: 35px;
+}
+
+.arrow-icon{
+    width: 20px;
+}
+
+.arrow-icon svg{
+    fill: #747474;
+}
+
+.sectionOneBoxText {
+    color: black;
+    font-size: 18px;
+    font-weight: 800;
+    transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
+}
 
 /* ===========FOOTER======= */
-
 footer {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 .innerFooter {
   background-color: #1b1b1b;
