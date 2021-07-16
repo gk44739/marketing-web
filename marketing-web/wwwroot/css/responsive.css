@@ -7,13 +7,15 @@
         align-items: flex-start;
     }
     .landingSlider .swiper-pagination-progressbar {
-        top: 65%;
-        transform: translateY(-65%);
+        top: unset;
+        transform: unset;
+        bottom: 0;
     }
-    .
+    .landingSliderBoxesHolder{
+        bottom: 40px;
+    }
     .landingSliderBoxesHolder .landingSliderBox{
         padding: 40px;
-        height: auto;
     }
     .landingSliderBoxesHolder .landingSliderBox h3{
         font-size: 30px;
@@ -66,6 +68,11 @@
     }
     .hamburgerMenu{
         display: flex;
+    }
+    .landingSlider .swiper-pagination-progressbar {
+        top: 65%;
+        transform: translateY(-65%);
+        bottom: unset;
     }
     .landingSliderBoxesHolder::before {
         bottom: 0px;
