@@ -308,7 +308,7 @@ nav ul li a:hover::before {
 .landingSliderBoxesHolder {
   position: absolute;
   width: 100%;
-  bottom: -10px;
+  bottom: -70px;
   left: 0;
   z-index: 1;
 }
@@ -385,6 +385,9 @@ nav ul li a:hover::before {
 .landingSliderBoxesHolder .landingSliderBox.active h3::after,
 .landingSliderBoxesHolder .landingSliderBox:hover h3::after {
   background-color: #ffffff;
+}
+.sectionOne{
+  padding-top: 120px;
 }
 .sectionOne,
 .sectionTwo,
