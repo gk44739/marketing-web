@@ -104,12 +104,15 @@ textarea {
   background: #e9204f;
   border-radius: 4px;
   cursor: pointer;
+  transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 
 /* Handle on hover */
 *::-webkit-scrollbar-thumb:hover {
   background: #ffffff;
+  border: 2px solid #ffffff;
 }
+
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #000000;
@@ -315,7 +318,7 @@ nav ul li a:hover::before {
   width: 2px;
   background-color: #e9204f;
   position: absolute;
-  bottom: 0px;
+  bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -323,8 +326,12 @@ nav ul li a:hover::before {
 .landingSliderBoxesHolder .landingSliderBox {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
   background-color: #1b1b1b;
-  padding: 60px 40px;
+  padding: 40px;
   color: #ffffff;
   cursor: pointer;
   margin-bottom: 30px;
@@ -351,6 +358,8 @@ nav ul li a:hover::before {
   margin-bottom: 20px;
 }
 .landingSliderBoxesHolder .landingSliderBox .iconHolder svg {
+  width: 50px;
+  height: 50px;
   fill: #e9204f;
   transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
@@ -377,7 +386,10 @@ nav ul li a:hover::before {
 .landingSliderBoxesHolder .landingSliderBox:hover h3::after {
   background-color: #ffffff;
 }
-.sectionOne {
+.sectionOne,
+.sectionTwo,
+.sectionThree,
+.sectionFour {
   min-height: 100vh;
 }
 

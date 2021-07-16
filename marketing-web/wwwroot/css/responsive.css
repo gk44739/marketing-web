@@ -2,6 +2,27 @@
 @media (max-width: 1400px) {
 
 }
+@media (max-width: 1200px) {
+    .landingSlideHolder {
+        align-items: flex-start;
+    }
+    .landingSlider .swiper-pagination-progressbar {
+        top: 65%;
+        transform: translateY(-65%);
+    }
+    .
+    .landingSliderBoxesHolder .landingSliderBox{
+        padding: 40px;
+        height: auto;
+    }
+    .landingSliderBoxesHolder .landingSliderBox h3{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .landingSliderBoxesHolder .landingSliderBox p{
+        font-size: 14px;
+    }
+}
 
 @media (max-width: 768px) {
     .landingSlideHolder .landingHero{
@@ -46,29 +67,15 @@
     .hamburgerMenu{
         display: flex;
     }
-    .landingSliderBoxesHolder {
+    .landingSliderBoxesHolder::before {
+        bottom: 0px;
+    }
+    .landingSliderBoxesHolder{
         position: relative;
         bottom: 0;
     }
-}
-
-@media (max-width: 1200px) {
-    .landingSlideHolder {
-        align-items: flex-start;
-    }
-    .landingSlider .swiper-pagination-progressbar {
-        top: 65%;
-        transform: translateY(-65%);
-    }
     .landingSliderBoxesHolder .landingSliderBox{
-        padding: 40px;
-    }
-    .landingSliderBoxesHolder .landingSliderBox h3{
-        font-size: 30px;
-        margin-bottom: 20px;
-    }
-    .landingSliderBoxesHolder .landingSliderBox p{
-        font-size: 14px;
+        height: auto;
     }
 }
 
