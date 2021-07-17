@@ -584,7 +584,7 @@ nav ul li a:hover::before {
 .sectionTwo,
 .sectionThree,
 .sectionFour,
-.sectionSix{
+.sectionSix {
   min-height: calc(100vh - 120px);
 }
 /* Section One */
@@ -887,6 +887,7 @@ footer {
 }
 /* ========== SectionFour ========== */
 .sectionFour {
+  padding: 100px 0px 0px 0px;
   background-color: white;
   position: relative;
 }
@@ -963,7 +964,7 @@ footer {
 }
 @media (min-width: 960px) {
   .sectionFive {
-    padding-bottom: 140px;
+    padding: 100px 0px 140px 0px;
   }
 }
 /* ================================ */
