@@ -482,16 +482,16 @@ nav ul li a:hover::before {
     transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 
-/* Section Two */
-.sectionTwo{
+/* Section Three */
+.sectionThree {
     background: white;
 }
 
-.sectionTwoTitle {
+.sectionThreeTitle {
     position: relative;
 }
 
-.sectionTwoTitle::before{
+.sectionThreeTitle::before{
     content: '';
     position: absolute;
     top: 0;
@@ -501,22 +501,22 @@ nav ul li a:hover::before {
     background: #e9204f;
 }
 
-.sectionTwoTitle {
+.sectionThreeTitle {
     margin-bottom: 40px;
 }
 
-.sectionTwoTitle h1{
+.sectionThreeTitle h1{
     font-size: 50px;
     color: black;
 }
 
-.sectionTwoTitle span{
+.sectionThreeTitle span{
     color: #e9204f;
     font-weight: 600;
     font-size: 14px;
 }
 
-.SectionTwoDescription {
+.sectionThreeDescription {
     display: flex;
     align-items: center;
     height: 100%;
@@ -562,7 +562,7 @@ nav ul li a:hover::before {
     color: #d3d3d3;
 }
 
-.sectionTwo img {
+.sectionThree img {
     filter: grayscale(100%);
     transition: 1300ms cubic-bezier(0.17, 0.67, 0, 1.01);
     cursor: pointer;
