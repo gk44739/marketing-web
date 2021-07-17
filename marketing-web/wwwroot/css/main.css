@@ -251,7 +251,9 @@ nav ul li a:hover::before {
 .landingSlider .swiper-pagination-progressbar {
   background: none;
 }
-.landingSlider .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+.landingSlider
+  .swiper-pagination-progressbar
+  .swiper-pagination-progressbar-fill {
   background: #e9204f;
 }
 .landingSlider .swiper-button-prev,
@@ -393,15 +395,15 @@ nav ul li a:hover::before {
   background-color: #ffffff;
   overflow: hidden;
 }
-.sectionTwo::after{
-  content: '';
+.sectionTwo::after {
+  content: "";
   position: absolute;
   left: 50%;
   bottom: -15px;
   transform: translateX(-50%);
   width: 2px;
   height: 30px;
-  background-color: #E9204F;
+  background-color: #e9204f;
 }
 .sectionTwo .sectionTwoHeading {
   display: flex;
@@ -458,7 +460,7 @@ nav ul li a:hover::before {
 .sectionTwo .sectionTwoHeading a:hover::before {
   width: 100%;
 }
-.worksSlider{
+.worksSlider {
   position: relative;
   margin: 0 auto;
 }
@@ -487,7 +489,7 @@ nav ul li a:hover::before {
   align-items: center;
 }
 
-.worksSlider .worksSlide{
+.worksSlider .worksSlide {
   position: relative;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
@@ -500,10 +502,13 @@ nav ul li a:hover::before {
   transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
   cursor: pointer;
 }
-.worksSlider .worksSlide .worksSlideContent{
+.worksSlider .worksSlide .worksSlideContent {
   position: absolute;
   top: 0;
   left: 0px;
+}
+.worksSlider .worksSlide {
+  background-color: #000000;
   width: 100%;
   height: 100%;
   display: flex;
@@ -515,52 +520,63 @@ nav ul li a:hover::before {
   opacity: 0;
   transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
-.worksSlider .worksSlide .worksSlideContent .workSlideContentInner{
+.worksSlider .worksSlide .worksSlideContent .workSlideContentInner {
   will-change: transform;
   transform: translateX(-20px);
   transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
-.worksSlider .worksSlide .worksSlideContent .workSlideContentInner h1{
+.worksSlider .worksSlide .worksSlideContent .workSlideContentInner h1 {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 5px;
 }
-.worksSlider .worksSlide .worksSlideContent .workSlideContentInner p{
+.worksSlider .worksSlide .worksSlideContent .workSlideContentInner p {
   font-size: 16px;
   color: #e0e0e0;
 }
-.worksSlider .worksSlide:hover{
+.worksSlider .worksSlide:hover {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
   transform: scale(0.97);
   background-size: 120% 100%;
 }
-.worksSlider .worksSlide:hover .worksSlideContent .workSlideContentInner{
+.worksSlider .worksSlide:hover .worksSlideContent .workSlideContentInner {
   transform: translateX(0px);
 }
-.worksSlider .worksSlide:hover .worksSlideContent{
+.worksSlider .worksSlide:hover .worksSlideContent {
   visibility: visible;
   opacity: 1;
 }
-.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 30px;
   bottom: -60px;
 }
-.swiper-pagination-bullet.swiper-pagination-bullet-active{
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #e9204f;
-  border: 1px solid #E9204F;
+  border: 1px solid #e9204f;
   width: 15px;
   height: 15px;
 }
-.swiper-pagination-bullet{
+.swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   border: 1px solid #d3d3d3;
   background-color: transparent;
   opacity: 1;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 15px;
+  height: 15px;
+}
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #e9204f;
   transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 /* Section Two End */
@@ -572,190 +588,191 @@ nav ul li a:hover::before {
 }
 /* Section One */
 
-.sectionOne{
-    background: white;
+.sectionOne {
+  background: white;
 }
 
 .sectionOneBox {
-    padding: 35px 25px;
-    background: #F3F3F3;
-    cursor: pointer;
-    transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
-    position: relative;
+  padding: 35px 25px;
+  background: #f3f3f3;
+  cursor: pointer;
+  transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
+  position: relative;
 }
-.sectionOneTitle{
-    position: relative;
-}
-
-.sectionOneTitle::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height:2px;
-    background: #e9204f;
+.sectionOneTitle {
+  position: relative;
 }
 
-.sectionOneTitle{
-    margin-bottom: 40px;
+.sectionOneTitle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #e9204f;
 }
 
-.sectionOneTitle h1{
-    font-size: 50px;
-    color: black;
+.sectionOneTitle {
+  margin-bottom: 40px;
 }
 
-.sectionOneTitle span{
-    color: #e9204f;
-    font-weight: 600;
-    font-size: 14px;
+.sectionOneTitle h1 {
+  font-size: 50px;
+  color: black;
+}
+
+.sectionOneTitle span {
+  color: #e9204f;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .sectionOneBox::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%) scale(0);
-    background-image: url(../img/digitalPlus.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 40px;
-    height: 40px;
-    transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%) scale(0);
+  background-image: url(../img/digitalPlus.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 .sectionOneBox:hover::before {
-    transform: translateY(-50%) scale(1);
+  transform: translateY(-50%) scale(1);
 }
-
 
 .sectionOneBox:hover {
-    background: #E9204F;
+  background: #e9204f;
 }
-.sectionOneBox:hover .arrow-icon svg{
-    fill: white;
-}
-
-.sectionOneBox:hover .sectionOneBoxText{
-    color: white;
-    padding-left: 35px;
+.sectionOneBox:hover .arrow-icon svg {
+  fill: white;
 }
 
-.arrow-icon{
-    width: 20px;
+.sectionOneBox:hover .sectionOneBoxText {
+  color: white;
+  padding-left: 35px;
 }
 
-.arrow-icon svg{
-    fill: #747474;
+.arrow-icon {
+  width: 20px;
+}
+
+.arrow-icon svg {
+  fill: #747474;
 }
 
 .sectionOneBoxText {
-    color: black;
-    font-size: 18px;
-    font-weight: 800;
-    transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
+  color: black;
+  font-size: 18px;
+  font-weight: 800;
+  transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 
 /* Section Three */
 .sectionThree {
-    background: white;
+  background: white;
 }
 
 .sectionThreeTitle {
-    position: relative;
+  position: relative;
 }
 
-.sectionThreeTitle::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height:2px;
-    background: #e9204f;
+.sectionThreeTitle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #e9204f;
 }
 
 .sectionThreeTitle {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
-.sectionThreeTitle h1{
-    font-size: 50px;
-    color: black;
+.sectionThreeTitle h1 {
+  font-size: 50px;
+  color: black;
 }
 
-.sectionThreeTitle span{
-    color: #e9204f;
-    font-weight: 600;
-    font-size: 14px;
+.sectionThreeTitle span {
+  color: #e9204f;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .sectionThreeDescription {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    color: #747474;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: #747474;
 }
 
-.aboutFirstImage{
-    width: 100%;
-    position: relative;
+.aboutFirstImage {
+  width: 100%;
+  position: relative;
 }
 
-.aboutSecondImages{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.aboutSecondImages {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.aboutSecondImages div{
-    position: relative;
+.aboutSecondImages div {
+  position: relative;
 }
 
-.aboutSecondImages div div{
-    position: absolute;
-    top: 70%;
-    left: 30px;
+.aboutSecondImages div div {
+  position: absolute;
+  top: 70%;
+  left: 30px;
 }
 
-.aboutSecondImages div div span{
-    color: #d3d3d3;
+.aboutSecondImages div div span {
+  color: #d3d3d3;
 }
 
-.aboutSecondImages div div h4, .aboutFirstImage h4{
-    font-weight: 700;
+.aboutSecondImages div div h4,
+.aboutFirstImage h4 {
+  font-weight: 700;
 }
 
 .aboutFirstImage div {
-    position: absolute;
-    top: 85%;
-    left: 30px;
+  position: absolute;
+  top: 85%;
+  left: 30px;
 }
 
-.aboutFirstImage div span{
-    color: #d3d3d3;
+.aboutFirstImage div span {
+  color: #d3d3d3;
 }
 
 .sectionThree img {
-    filter: grayscale(100%);
-    transition: 1300ms cubic-bezier(0.17, 0.67, 0, 1.01);
-    cursor: pointer;
+  filter: grayscale(100%);
+  transition: 1300ms cubic-bezier(0.17, 0.67, 0, 1.01);
+  cursor: pointer;
 }
 
-.aboutFirstImage:hover img , .aboutSecondImages div:hover img {
-    filter: grayscale(0%);
+.aboutFirstImage:hover img,
+.aboutSecondImages div:hover img {
+  filter: grayscale(0%);
 }
 
-.aboutParagraph{
-    color: #747474;
-    padding-top: 10px;
+.aboutParagraph {
+  color: #747474;
+  padding-top: 10px;
 }
 
 /* ===========FOOTER======= */
 footer {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .innerFooter {
   background-color: #1b1b1b;
@@ -867,6 +884,7 @@ footer {
   display: flex;
   justify-content: center;
 }
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
