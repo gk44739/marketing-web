@@ -482,6 +482,101 @@ nav ul li a:hover::before {
     transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 
+/* Section Two */
+.sectionTwo{
+    background: white;
+}
+
+.sectionTwoTitle {
+    position: relative;
+}
+
+.sectionTwoTitle::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height:2px;
+    background: #e9204f;
+}
+
+.sectionTwoTitle {
+    margin-bottom: 40px;
+}
+
+.sectionTwoTitle h1{
+    font-size: 50px;
+    color: black;
+}
+
+.sectionTwoTitle span{
+    color: #e9204f;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.SectionTwoDescription {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #747474;
+}
+
+.aboutFirstImage{
+    width: 100%;
+    position: relative;
+}
+
+.aboutSecondImages{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.aboutSecondImages div{
+    position: relative;
+}
+
+.aboutSecondImages div div{
+    position: absolute;
+    top: 70%;
+    left: 30px;
+}
+
+.aboutSecondImages div div span{
+    color: #d3d3d3;
+}
+
+.aboutSecondImages div div h4, .aboutFirstImage h4{
+    font-weight: 700;
+}
+
+.aboutFirstImage div {
+    position: absolute;
+    top: 85%;
+    left: 30px;
+}
+
+.aboutFirstImage div span{
+    color: #d3d3d3;
+}
+
+.sectionTwo img {
+    filter: grayscale(100%);
+    transition: 1300ms cubic-bezier(0.17, 0.67, 0, 1.01);
+    cursor: pointer;
+}
+
+.aboutFirstImage:hover img , .aboutSecondImages div:hover img {
+    filter: grayscale(0%);
+}
+
+.aboutParagraph{
+    color: #747474;
+    padding-top: 10px;
+}
+
 /* ===========FOOTER======= */
 footer {
     display: flex;
