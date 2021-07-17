@@ -884,6 +884,7 @@ footer {
   display: flex;
   justify-content: center;
 }
+/* ========== SectionFour ========== */
 .sectionFour {
   background-color: white;
   position: relative;
@@ -943,6 +944,7 @@ footer {
   margin-top: 50px;
   font-size: 15px;
 }
+/* =========Section Five=========== */
 .sectionFive {
   background-color: white;
 }
@@ -963,6 +965,7 @@ footer {
     padding-bottom: 140px;
   }
 }
+/* ================================ */
 /* ==========================================================================
    Helper classes
    ========================================================================== */
