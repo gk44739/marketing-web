@@ -583,7 +583,8 @@ nav ul li a:hover::before {
 .sectionOne,
 .sectionTwo,
 .sectionThree,
-.sectionFour {
+.sectionFour,
+.sectionSix{
   min-height: calc(100vh - 120px);
 }
 /* Section One */
