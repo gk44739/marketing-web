@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>marketing_web</RootNamespace>
+    <UserSecretsId>96cbc4ef-bce0-4bce-8c30-13ce198ac30a</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
