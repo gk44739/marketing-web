@@ -28,7 +28,7 @@
   nav {
     flex-direction: column;
     position: absolute;
-    top: -100%;
+    top: 0;
     left: 0;
     z-index: 100;
     width: 100%;
@@ -36,10 +36,11 @@
     background-color: #000000;
     visibility: hidden;
     opacity: 0;
+    transform: translateX(-100%);
     transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
   }
   nav.active {
-    top: 0;
+    transform: translateX(0%);
     visibility: visible;
     opacity: 1;
   }
@@ -85,8 +86,9 @@
   .landingSlideHolder .landingHero a {
     padding: 15px 40px;
   }
-  .sectionTwo {
-    padding-bottom: 60px;
+  .sectionTwo,
+  .sectionFive{
+    padding-bottom: 100px;
   }
   .swiper-container-horizontal > .swiper-pagination-bullets,
   .swiper-pagination-custom,
@@ -96,6 +98,7 @@
   .photoClients::before {
     right: 0px;
   }
+
 }
 
 @media (max-width: 576px) {
@@ -114,5 +117,11 @@
   .landingSliderBoxesHolder::before {
     left: 35%;
     transform: translateX(-35%);
+  }
+  .sectionTwo {
+    padding-bottom: 100px;
+  }
+  .sectionTwo .sectionTwoHeading a{
+    padding: 10px 20px;
   }
 }

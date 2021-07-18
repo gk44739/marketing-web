@@ -80,6 +80,11 @@
   });
 
   if ($(window).width() < 992) {
+    setTimeout(() => {
+      $(".linksNavbar").children().each(function (i, item) {
+          $(item).removeClass("aos-init aos-animate");
+        });
+    }, 150);
     $(".animate-box").each(function (i, item) {
       $(item).attr("data-aos-delay", 100);
     });
@@ -88,19 +93,18 @@
   $(window).on("resize", function () {
     if ($(window).width() < 992) {
       setTimeout(() => {
-        $(".linksNavbar")
-          .children()
-          .each(function (i, item) {
+        $(".linksNavbar").children().each(function (i, item) {
             $(item).removeClass("aos-init aos-animate");
           });
-      }, 50);
+      }, 150);
       $(".animate-box").each(function (i, item) {
         $(item).attr("data-aos-delay", 100);
       });
     }
   });
 
-  $('.buttonFooter').on('click',function (e) {
+  $('.buttonFooter,.buttonSlider').on('click',function (e) {
+    e.preventDefault();
     if(!$('.formSection').hasClass('open')){
       $('.formSection').addClass('open');
       $("body").addClass("formActive");
@@ -111,6 +115,7 @@
   });
 
   $('.formHeadingClose').on('click',function (e) {
+    e.preventDefault();
     if(!$('.formSection').hasClass('open')){
       $('.formSection').addClass('open');
       $("body").addClass("formActive");

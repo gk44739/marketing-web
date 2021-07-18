@@ -351,11 +351,12 @@ nav ul li a:hover::before {
 .landingSlideHolder .landingHero a {
   position: relative;
   display: inline-block;
-  color: #ffffff;
+  color: #ffffff !important;
   font-weight: bold;
   text-decoration: none;
   padding: 15px 70px;
   border: 2px solid #268348;
+  cursor: pointer;
 }
 .landingSlideHolder .landingHero a::after {
   content: "";
@@ -931,7 +932,7 @@ nav ul li a:hover::before {
 .sectionFive .sectionFiveHeading h1 {
   font-weight: bold;
   font-size: 55px;
-  margin-bottom: 10px;
+  margin: 80px 0 10px 0;
 }
 .sectionFive .sectionFiveHeading p {
   color: #268348;
@@ -1109,6 +1110,67 @@ nav ul li a:hover::before {
 }
 .formSection .formHeading .formHeadingClose:hover svg{
   fill: #ffffff;
+}
+.formSection form .form-group{
+  margin-top: 40px;
+}
+.formSection form .form-group label{
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.formSection form .form-group textarea,
+.formSection form .form-group select,
+.formSection form .form-group input{
+  border: 2px solid #268348;
+  border-radius: 0px;
+  font-size: 18px;
+  padding: 30px 15px;
+  background-color: transparent;
+  color: #ffffff;
+  outline: #268348;
+  transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+.formSection form .form-group textarea::placeholder,
+.formSection form .form-group select::placeholder,
+.formSection form .form-group input::placeholder{
+  color: #ffffff;
+  opacity: .5;
+}
+.formSection form .form-group textarea:focus,
+.formSection form .form-group select:focus,
+.formSection form .form-group input:focus{
+  box-shadow: 0 0 10px 5px rgb(38 131 72 / 55%);
+}
+.formSection form .form-group textarea{
+  margin-bottom: 60px;
+}
+.formSection form button{
+  position: relative;
+  padding: 20px 50px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  border:2px solid #268348
+}
+.formSection form button::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0px;
+  height: 100%;
+  background-color: #268348;
+  z-index: -1;
+  transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+.formSection form button:hover{
+  outline: none;
+}
+.formSection form button:hover::before{
+  width: 100%;
 }
 /* Form Section End */
 
