@@ -1,4 +1,12 @@
 ﻿$(document).ready(function () {
+
+  setTimeout(function(){
+    $('.loader-bg').addClass('removeLoader');
+    AOS.init();
+  },1500);
+  setTimeout(() => {
+    $('.loader-bg').remove();
+  }, 2200);
   const landingSlider = new Swiper(".landingSlider", {
     pagination: {
       el: ".swiper-pagination",

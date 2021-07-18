@@ -120,6 +120,59 @@ body {
 body.navActive {
   overflow: hidden;
 }
+/*CUSTOM PRELOADER Start*/
+.loader-bg{
+  position: fixed;
+  z-index: 999999;
+  background: #000000;
+  width: 100%;
+  height: 100vh;
+  transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+.loader-bg.removeLoader{
+  transform: translateY(-100%);
+}
+.loader-p{
+  border: 0 solid transparent;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: calc(50vh - 75px);
+  left: calc(50vw - 75px);
+}
+
+.loader-p:before, .loader-p:after{
+  content: '';
+  border: 1em solid #15e38a;
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: loader 2s linear infinite;
+  opacity: 0;
+}
+
+.loader-p:before{
+  animation-delay: 0.5s;
+}
+
+@keyframes loader{
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+/*CUSTOM PRELOADER End*/
 .row{
   overflow: hidden;
 }
@@ -673,8 +726,7 @@ nav ul li a:hover::before {
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #268348;
   border: 1px solid #268348;
-  width: 15px;
-  height: 15px;
+  transform: scale(1.05);
 }
 .swiper-pagination-bullet {
   width: 12px;
@@ -985,6 +1037,10 @@ nav ul li a:hover::before {
 }
 /* Section Five End */
 
+/* Form Section Start*/
+
+/* Form Section End */
+
 /* ===========FOOTER======= */
 footer {
   display: flex;
@@ -993,10 +1049,9 @@ footer {
 .innerFooter {
   background-color: #1b1b1b;
 }
-/* .content1Footer {
-  display: flex;
-  flex-direction: row;
-} */
+.firstFooterContent{
+  padding: 140px 0;
+}
 .footerLinks {
   display: flex;
   justify-content: center;
@@ -1038,22 +1093,19 @@ footer {
   font-size: 25px;
 }
 .buttonFooter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  margin-bottom: 40px;
+  text-align: center;
 }
-.buttonFooter button {
+.buttonFooter a {
+  display: inline-block;
   position: relative;
+  text-decoration: none;
   z-index: 1;
   border: 2px solid #268348;
   background: transparent;
-  padding: 10px 40px;
-  height: 50px;
-  color: white;
+  padding: 20px 50px;
+  color: #ffffff;
 }
-.buttonFooter button::before {
+.buttonFooter a::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1064,10 +1116,9 @@ footer {
   background-color: #268348;
   transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
-.buttonFooter button:hover::before {
+.buttonFooter a:hover::before{
   width: 100%;
 }
-
 .content2Footer {
   background-color: #161616;
   color: white;
