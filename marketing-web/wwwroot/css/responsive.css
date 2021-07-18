@@ -1,107 +1,118 @@
-
 @media (max-width: 1400px) {
-
 }
 @media (max-width: 1200px) {
-    .landingSlideHolder {
-        align-items: flex-start;
-    }
-    .landingSlider .swiper-pagination-progressbar {
-        top: unset;
-        transform: unset;
-        bottom: 0;
-    }
-    .landingSliderBoxesHolder{
-        bottom: 40px;
-    }
-    .landingSliderBoxesHolder .landingSliderBox{
-        padding: 40px;
-    }
-    .landingSliderBoxesHolder .landingSliderBox h3{
-        font-size: 30px;
-        margin-bottom: 20px;
-    }
-    .landingSliderBoxesHolder .landingSliderBox p{
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 768px) {
-    .landingSlideHolder .landingHero{
-        padding-bottom: 50px;
-    }
-    .landingSlideHolder .landingHero h1{
-        font-size: 50px;
-    }
-    .landingSlideHolder .landingHero a{
-        padding: 15px 40px;
-    }
+  .landingSlideHolder {
+    align-items: flex-start;
+  }
+  .landingSlider .swiper-pagination-progressbar {
+    top: unset;
+    transform: unset;
+    bottom: 0;
+  }
+  .landingSliderBoxesHolder {
+    bottom: 40px;
+  }
+  .landingSliderBoxesHolder .landingSliderBox {
+    padding: 40px;
+  }
+  .landingSliderBoxesHolder .landingSliderBox h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .landingSliderBoxesHolder .landingSliderBox p {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 992px) {
-    nav {
-        flex-direction: column;
-        position: absolute;
-        top: -100%;
-        left: 0;
-        z-index: 100;
-        width: 100%;
-        height: 100vh;
-        background-color: #000000;
-        visibility: hidden;
-        opacity: 0;
-        transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
-    }
-    nav.active{
-        top:0;
-        visibility: visible;
-        opacity: 1;
-    }
-    nav .linksNavbar{
-        flex-direction: column;
-    }
-    nav ul li{
-        padding-bottom: 40px;
-    }
-    nav ul li a{
-        font-size: 30px;
-    }
-    .hamburgerMenu{
-        display: flex;
-    }
-    .landingSlider .swiper-pagination-progressbar {
-        top: 65%;
-        transform: translateY(-65%);
-        bottom: unset;
-    }
-    .landingSliderBoxesHolder::before {
-        bottom: 0px;
-    }
-    .landingSliderBoxesHolder{
-        position: relative;
-        bottom: 0;
-    }
-    .landingSliderBoxesHolder .landingSliderBox{
-        height: auto;
-    }
+  nav {
+    flex-direction: column;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    visibility: hidden;
+    opacity: 0;
+    transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
+  }
+  nav.active {
+    top: 0;
+    visibility: visible;
+    opacity: 1;
+  }
+  nav .linksNavbar {
+    flex-direction: column;
+  }
+  nav ul li {
+    padding-bottom: 40px;
+  }
+  nav ul li a {
+    font-size: 30px;
+  }
+  .hamburgerMenu {
+    display: flex;
+  }
+  .landingSlider .swiper-pagination-progressbar {
+    top: 65%;
+    transform: translateY(-65%);
+    bottom: unset;
+  }
+  .landingSliderBoxesHolder::before {
+    bottom: 0px;
+  }
+  .landingSliderBoxesHolder {
+    position: relative;
+    bottom: 0;
+  }
+  .landingSliderBoxesHolder .landingSliderBox {
+    height: auto;
+  }
+  .sectionOne {
+    padding-top: 30px;
+}
+}
+
+@media (max-width: 768px) {
+  .landingSlideHolder .landingHero {
+    padding-bottom: 50px;
+  }
+  .landingSlideHolder .landingHero h1 {
+    font-size: 50px;
+  }
+  .landingSlideHolder .landingHero a {
+    padding: 15px 40px;
+  }
+  .sectionTwo {
+    padding-bottom: 60px;
+  }
+  .swiper-container-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    bottom: -40px;
+  }
+  .photoClients::before {
+    right: 0px;
+  }
 }
 
 @media (max-width: 576px) {
-    nav ul li{
-        padding-bottom: 20px;
-    }
-    .landingSliderBoxesHolder .landingSliderBox.last::before{
-        right: -15px;
-    }
-    .landingSlideHolder .landingHero{
-        text-align: center;
-    }
-    .landingSlideHolder .landingHero h1{
-        font-size: 30px;
-    }
-    .landingSliderBoxesHolder::before{
-        left: 35%;
-        transform: translateX(-35%);
-    }
+  nav ul li {
+    padding-bottom: 20px;
+  }
+  .landingSliderBoxesHolder .landingSliderBox.last::before {
+    right: -15px;
+  }
+  .landingSlideHolder .landingHero {
+    text-align: center;
+  }
+  .landingSlideHolder .landingHero h1 {
+    font-size: 30px;
+  }
+  .landingSliderBoxesHolder::before {
+    left: 35%;
+    transform: translateX(-35%);
+  }
 }
-

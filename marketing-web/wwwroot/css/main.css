@@ -100,8 +100,8 @@ textarea {
 
 /* Handle */
 *::-webkit-scrollbar-thumb {
-  border: 2px solid #e9204f;
-  background: #e9204f;
+  border: 2px solid #268348;
+  background: #268348;
   border-radius: 4px;
   cursor: pointer;
   transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
@@ -118,6 +118,9 @@ body {
   background-color: #000000;
 }
 body.navActive {
+  overflow: hidden;
+}
+.row{
   overflow: hidden;
 }
 /* Header */
@@ -137,7 +140,7 @@ header .headerInner {
 }
 header .headerInner .headerLogo a {
   display: block;
-  width: 180px;
+  width: 110px;
   height: 80px;
 }
 header .headerInner .headerLogo svg {
@@ -145,12 +148,17 @@ header .headerInner .headerLogo svg {
   height: 100%;
   cursor: pointer;
 }
+header .headerInner .headerLogo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 header .headerInner .headerLogo svg path {
   fill: #ffffff;
   transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 header .headerInner .headerLogo svg:hover path {
-  fill: #e9204f;
+  fill: #268348;
 }
 nav {
   display: flex;
@@ -193,11 +201,11 @@ nav ul li a::before {
   transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 nav ul li a.active::before {
-  background-color: #e9204f;
+  background-color: #268348;
   width: 35px;
 }
 nav ul li a:hover::before {
-  background-color: #e9204f;
+  background-color: #268348;
   width: 35px;
 }
 .hamburgerMenu {
@@ -214,7 +222,7 @@ nav ul li a:hover::before {
   height: 4px;
   margin: 4px 0;
   border-radius: 10px;
-  background-color: #e9204f;
+  background-color: #268348;
   transition: all 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 .hamburgerMenu span:nth-child(2) {
@@ -254,11 +262,11 @@ nav ul li a:hover::before {
 .landingSlider
   .swiper-pagination-progressbar
   .swiper-pagination-progressbar-fill {
-  background: #e9204f;
+  background: #268348;
 }
 .landingSlider .swiper-button-prev,
 .landingSlider .swiper-button-next {
-  color: #e9204f;
+  color: #268348;
 }
 .landingSlideHolder {
   display: flex;
@@ -290,7 +298,7 @@ nav ul li a:hover::before {
   font-weight: bold;
   text-decoration: none;
   padding: 15px 70px;
-  border: 2px solid #e9204f;
+  border: 2px solid #268348;
 }
 .landingSlideHolder .landingHero a::after {
   content: "";
@@ -298,7 +306,7 @@ nav ul li a:hover::before {
   height: 100%;
   position: absolute;
   inset: 0;
-  background-color: #e9204f;
+  background-color: #268348;
   transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
   z-index: -1;
 }
@@ -312,11 +320,11 @@ nav ul li a:hover::before {
   left: 0;
   z-index: 1;
 }
-.landingSliderBoxesHolder::before {
+.landingSliderBoxesHolder::after {
   content: "";
   height: 30px;
   width: 2px;
-  background-color: #e9204f;
+  background-color: #268348;
   position: absolute;
   bottom: -30px;
   left: 50%;
@@ -337,19 +345,22 @@ nav ul li a:hover::before {
   margin-bottom: 30px;
   transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
-.landingSliderBoxesHolder .landingSliderBox.last::before {
+.landingSliderBoxesHolder .container{
+  position: relative;
+}
+.landingSliderBoxesHolder .container::before {
   content: "";
   position: absolute;
-  right: -20px;
+  right: 0px;
   bottom: -50px;
   width: 200px;
   height: 100px;
-  background-color: #e9204f;
+  background-color: #268348;
   z-index: 2;
 }
 .landingSliderBoxesHolder .landingSliderBox.active,
 .landingSliderBoxesHolder .landingSliderBox:hover {
-  background-color: #e9204f;
+  background-color: #268348;
 }
 .landingSliderBoxesHolder .landingSliderBox .iconHolder {
   display: block;
@@ -360,7 +371,7 @@ nav ul li a:hover::before {
 .landingSliderBoxesHolder .landingSliderBox .iconHolder svg {
   width: 50px;
   height: 50px;
-  fill: #e9204f;
+  fill: #268348;
   transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 
@@ -379,32 +390,136 @@ nav ul li a:hover::before {
   bottom: -10px;
   width: 50px;
   height: 2px;
-  background-color: #e9204f;
+  background-color: #268348;
   transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 .landingSliderBoxesHolder .landingSliderBox.active h3::after,
 .landingSliderBoxesHolder .landingSliderBox:hover h3::after {
   background-color: #ffffff;
 }
+.sectionDivider{
+  position: relative;
+  z-index: 100;
+  background-color: #ffffff;
+}
+.sectionDivider::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 2px;
+  height: 60px;
+  background-color: #268348;
+}
+.sectionOne,
+.sectionTwo,
+.sectionThree,
+.sectionFour,
+.sectionFive,
+.sectionSix {
+  min-height: calc(100vh - 120px);
+  padding: 30px 0;
+  overflow: hidden;
+}
+/* Section One */
 .sectionOne {
   padding-top: 120px;
+  background: #ffffff;
 }
+.sectionOneBox {
+  padding: 35px 25px;
+  background: #f3f3f3;
+  cursor: pointer;
+  transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
+  position: relative;
+  overflow: hidden;
+}
+.sectionOneTitle {
+  position: relative;
+}
+.sectionOneTitle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #268348;
+}
+.sectionOneTitle {
+  margin-bottom: 40px;
+}
+.sectionOneTitle h1 {
+  font-size: 40px;
+  color: black;
+}
+.sectionOneTitle span {
+  color: #268348;
+  font-weight: 600;
+  font-size: 14px;
+}
+.sectionOneBoxIcon{
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  transform: translate(-30px,-50%) scale(0.2);
+  width: 60px;
+  height: 60px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
+  will-change: transform;
+}
+.sectionOneBoxIcon svg{
+  width: 60px;
+  height: 60px;
+  transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+.sectionOneBox:hover .sectionOneBoxIcon{
+  visibility: visible;
+  opacity: 1;
+  left:-15px;
+  transform: translateY(-50%) scale(1);
+}
+.sectionOneBox:hover .sectionOneBoxIcon svg{
+  fill: #ffffff;
+}
+.sectionOneBox:hover {
+  background: #268348;
+  padding-right: 15px;
+}
+.sectionOneBox:hover .arrow-icon svg {
+  fill: white;
+}
+.sectionOneBox:hover .sectionOneBoxText {
+  color: white;
+  padding-left: 35px;
+}
+
+.arrow-icon {
+  width: 30px;
+}
+
+.arrow-icon svg {
+  fill: #747474;
+}
+
+.sectionOneBoxText {
+  color: black;
+  font-size: 18px;
+  font-weight: 800;
+  transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
+}
+/* Section One End */
+
+
 /* Section Two */
 .sectionTwo {
   position: relative;
   background-color: #ffffff;
-  overflow: hidden;
 }
-.sectionTwo::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -15px;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 30px;
-  background-color: #e9204f;
-}
+
 .sectionTwo .sectionTwoHeading {
   display: flex;
   justify-content: space-between;
@@ -421,14 +536,15 @@ nav ul li a:hover::before {
   left: 0;
   width: 70px;
   height: 2px;
-  background-color: #e9204f;
+  background-color: #268348;
 }
 .sectionTwo .sectionTwoHeading .sectionTwoTitle h1 {
   font-weight: bold;
+  font-size: 40px;
   margin-bottom: 10px;
 }
 .sectionTwo .sectionTwoHeading .sectionTwoTitle p {
-  color: #e9204f;
+  color: #268348;
   font-weight: bold;
   font-size: 14px;
   text-transform: uppercase;
@@ -437,7 +553,7 @@ nav ul li a:hover::before {
   position: relative;
   z-index: 1;
   padding: 10px 40px;
-  border: 2px solid #e9204f;
+  border: 2px solid #268348;
   color: #000000;
   text-decoration: none;
   font-weight: bold;
@@ -451,7 +567,7 @@ nav ul li a:hover::before {
   left: 0;
   width: 0px;
   height: 100%;
-  background-color: #e9204f;
+  background-color: #268348;
   transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 .sectionTwo .sectionTwoHeading a:hover {
@@ -555,8 +671,8 @@ nav ul li a:hover::before {
   bottom: -60px;
 }
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: #e9204f;
-  border: 1px solid #e9204f;
+  background-color: #268348;
+  border: 1px solid #268348;
   width: 15px;
   height: 15px;
 }
@@ -571,104 +687,14 @@ nav ul li a:hover::before {
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
   width: 15px;
   height: 15px;
-  background-color: #e9204f;
+  background-color: #268348;
 }
 /* Section Two End */
-.sectionOne,
-.sectionTwo,
-.sectionThree,
-.sectionFour,
-.sectionSix {
-  min-height: calc(100vh - 120px);
-}
-/* Section One */
 
-.sectionOne {
-  background: white;
-}
 
-.sectionOneBox {
-  padding: 35px 25px;
-  background: #f3f3f3;
-  cursor: pointer;
-  transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
-  position: relative;
-}
-.sectionOneTitle {
-  position: relative;
-}
-
-.sectionOneTitle::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50px;
-  height: 2px;
-  background: #e9204f;
-}
-
-.sectionOneTitle {
-  margin-bottom: 40px;
-}
-
-.sectionOneTitle h1 {
-  font-size: 50px;
-  color: black;
-}
-
-.sectionOneTitle span {
-  color: #e9204f;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.sectionOneBox::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%) scale(0);
-  background-image: url(../img/digitalPlus.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
-  transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
-}
-.sectionOneBox:hover::before {
-  transform: translateY(-50%) scale(1);
-}
-
-.sectionOneBox:hover {
-  background: #e9204f;
-}
-.sectionOneBox:hover .arrow-icon svg {
-  fill: white;
-}
-
-.sectionOneBox:hover .sectionOneBoxText {
-  color: white;
-  padding-left: 35px;
-}
-
-.arrow-icon {
-  width: 20px;
-}
-
-.arrow-icon svg {
-  fill: #747474;
-}
-
-.sectionOneBoxText {
-  color: black;
-  font-size: 18px;
-  font-weight: 800;
-  transition: 1000ms cubic-bezier(0.17, 0.67, 0, 1.01);
-}
-
-/* Section Three */
+/* Section Three Start*/
 .sectionThree {
+  position: relative;
   background: white;
 }
 
@@ -683,7 +709,7 @@ nav ul li a:hover::before {
   left: 0;
   width: 50px;
   height: 2px;
-  background: #e9204f;
+  background: #268348;
 }
 
 .sectionThreeTitle {
@@ -691,12 +717,12 @@ nav ul li a:hover::before {
 }
 
 .sectionThreeTitle h1 {
-  font-size: 50px;
+  font-size: 40px;
   color: black;
 }
 
 .sectionThreeTitle span {
-  color: #e9204f;
+  color: #268348;
   font-weight: 600;
   font-size: 14px;
 }
@@ -725,7 +751,7 @@ nav ul li a:hover::before {
 
 .aboutSecondImages div div {
   position: absolute;
-  top: 70%;
+  bottom: 30px;
   left: 30px;
 }
 
@@ -740,7 +766,7 @@ nav ul li a:hover::before {
 
 .aboutFirstImage div {
   position: absolute;
-  top: 85%;
+  bottom: 30px;
   left: 30px;
 }
 
@@ -763,6 +789,86 @@ nav ul li a:hover::before {
   color: #747474;
   padding-top: 10px;
 }
+/* Section Three End */
+
+/* Section Four Start */
+.sectionFour {
+  background-color: white;
+  position: relative;
+}
+.photoClients {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px 0px 0px;
+  padding: 0px;
+}
+.photoClients::before {
+  content: "";
+  background-color: #268348;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  z-index: 1;
+}
+.photoClients img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  z-index: 2;
+}
+.infosClients {
+  display: flex;
+  flex-direction: column;
+  padding: 80px 0px 0px 10px;
+}
+.headerInfos h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 5px 0;
+  color: black;
+}
+.headerInfos p {
+  font-family: "Trade Gothic", "Roboto Condensed", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #268348;
+}
+.hrHeaderInfos {
+  border-top: 2px solid #268348 !important;
+  width: 40px;
+}
+.contentInfos p {
+  margin-top: 60px;
+  font-size: 18px;
+  color: #747474;
+}
+.clientName p{
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000;
+} 
+.ourClients{
+  width: 100%;
+  display: flex;
+  justify-content:center;
+  flex-wrap: wrap;
+  margin: 100px 0;
+  padding: 30px 0;
+  border-top: 1px solid #e5e5e5;
+}
+.ourClients .clientIcon{
+  display: inline-block;
+  padding: 10px 20px;
+}
+/* Section Four End */
+
+/* Section Five Start */
+.sectionFive{
+  background-color: #ffffff;
+}
+/* Section Five End */
 
 /* ===========FOOTER======= */
 footer {
@@ -783,10 +889,13 @@ footer {
   flex-wrap: wrap;
   padding: 20px;
 }
+.footerLinks .animationDivider{
+  display: flex;
+}
 .footerLinks a {
   position: relative;
   bottom: 0;
-  border: 2px solid #e9204f;
+  border: 2px solid #268348;
   border-radius: 50%;
   margin: 10px;
   padding: 5px;
@@ -796,7 +905,7 @@ footer {
   bottom: 10px;
 }
 .footerLinks a:hover svg {
-  fill: #e9204f;
+  fill: #268348;
 }
 .footerLinks a svg {
   width: 20px;
@@ -823,7 +932,7 @@ footer {
 .buttonFooter button {
   position: relative;
   z-index: 1;
-  border: 2px solid #e9204f;
+  border: 2px solid #268348;
   background: transparent;
   padding: 10px 40px;
   height: 50px;
@@ -837,7 +946,7 @@ footer {
   z-index: -1;
   width: 0px;
   height: 100%;
-  background-color: #e9204f;
+  background-color: #268348;
   transition: 700ms cubic-bezier(0.17, 0.67, 0, 1.01);
 }
 .buttonFooter button:hover::before {
@@ -868,6 +977,7 @@ footer {
   margin: 0px;
 }
 .content3Footer {
+  overflow: hidden;
   background-color: black;
   color: white;
 }
@@ -879,89 +989,7 @@ footer {
   display: flex;
   justify-content: center;
 }
-/* ========== SectionFour ========== */
-.sectionFour {
-  padding: 100px 0px 0px 0px;
-  background-color: white;
-  position: relative;
-}
 
-.photoClients {
-  display: flex;
-  justify-content: center;
-  margin: 50px 0px 0px 0px;
-  padding: 0px;
-}
-.photoClients img {
-  width: 100%;
-  height: 550px;
-  z-index: 2;
-}
-@media (min-width: 960px) {
-  .photoClients::before {
-    content: "";
-    background-color: #e9204f;
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    right: -20px;
-    bottom: -20px;
-    z-index: 1;
-  }
-}
-.infosClients {
-  display: flex;
-  flex-direction: column;
-  padding: 80px 0px 0px 10px;
-}
-.headerInfos h1 {
-  font-size: 48px;
-  font-weight: bold;
-  color: black;
-}
-.headerInfos p {
-  font-family: "Trade Gothic", "Roboto Condensed", sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #e9204f;
-}
-.hrHeaderInfos {
-  border-top: 2px solid #e9204f !important;
-  width: 40px;
-}
-.contentInfos p {
-  font-size: 1.5em;
-  color: #747474;
-}
-.clientName p {
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #101010;
-  margin-top: 50px;
-  font-size: 15px;
-}
-/* =========Section Five=========== */
-.sectionFive {
-  background-color: white;
-}
-.sectionFive hr {
-  margin: 0px 0px 5px 0px;
-  border-color: rgba(0, 0, 0, 0.08);
-}
-.allClients {
-  display: flex;
-  justify-content: space-between;
-}
-.allClients p {
-  font-size: 30px;
-  font-weight: bold;
-}
-@media (min-width: 960px) {
-  .sectionFive {
-    padding: 100px 0px 140px 0px;
-  }
-}
-/* ================================ */
 /* ==========================================================================
    Helper classes
    ========================================================================== */

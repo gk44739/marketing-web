@@ -15,24 +15,25 @@
     spaceBetween: 30,
     centeredSlides: true,
     centeredSlidesBounds: true,
+    slideToClickedSlide: true,
     loop:true,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
     },
     breakpoints: {
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 20,
+      0: {
+        slidesPerView: 1
       },
       768: {
-        slidesPerView: 4,
-        spaceBetween: 40,
+        slidesPerView: 2
       },
-      1024: {
-        slidesPerView: 5,
-        spaceBetween: 50,
+      1024:{
+        slidesPerView:3
       },
+      1500:{
+        slidesPerView:4
+      }
     },
   });
 
@@ -82,4 +83,7 @@
       });
     }
   });
+
+  $(window).on('load', AOS.refresh());
+
 });
