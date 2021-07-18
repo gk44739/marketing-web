@@ -1,11 +1,11 @@
 ﻿$(document).ready(function () {
 
   setTimeout(function(){
-    $('.loader-bg').addClass('removeLoader');
+    $('.loader-wrapper').addClass('removeLoader');
     AOS.init();
-  },1500);
+  },2500);
   setTimeout(() => {
-    $('.loader-bg').remove();
+    $('.loader-wrapper').remove();
   }, 2200);
   const landingSlider = new Swiper(".landingSlider", {
     pagination: {
@@ -44,9 +44,15 @@
       }
     },
   });
-  // $(window).on('scroll',function(e) {
-  //   $('header').addClass('scrolled');
-  // })
+
+  $(window).scroll(function(){
+    if ($(window).scrollTop() >= 100){ 
+      $('header').addClass('scrolled');
+    }else {
+      $('header').removeClass('scrolled');
+    }
+  });
+
   $(".hamburgerMenu").on("click", function (e) {
     if ($(e.currentTarget).hasClass("active")) {
       $(e.currentTarget).removeClass("active");
