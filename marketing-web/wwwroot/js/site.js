@@ -10,7 +10,7 @@
     },
   });
 
-  const workSlider = new Swiper(".worksSlider", {
+  const workSlider = new Swiper(".worksSlider , .newsSlider", {
     slidesPerView: 4,
     spaceBetween: 30,
     centeredSlides: true,
