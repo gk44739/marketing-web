@@ -15,6 +15,7 @@ html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
+  scroll-behavior: smooth;  
 }
 
 /*
@@ -116,7 +117,9 @@ textarea {
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #000000;
+  scroll-margin-top: 200;
 }
+  
 body.navActive ,
 body.formActive {
   overflow: hidden;
@@ -236,9 +239,9 @@ nav ul li {
 nav ul li:last-child {
   padding-right: 0px;
 }
-nav ul li a {
+nav ul li a{
   position: relative;
-  color: #ffff;
+  color: #ffffff;
   text-decoration: none;
 }
 nav ul li a:hover {
@@ -264,6 +267,10 @@ nav ul li a.active::before {
 nav ul li a:hover::before {
   background-color: #268348;
   width: 35px;
+}
+nav ul li a.buttonHeader{
+  color: #ffffff !important;
+  cursor: pointer;
 }
 .hamburgerMenu {
   position: relative;
