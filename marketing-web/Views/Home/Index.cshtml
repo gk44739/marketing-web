@@ -1,4 +1,6 @@
-﻿
+﻿@using marketing_web.ViewModels
+@model Contact
+ 
 <div class="landingSlliderWrapper">
 
     <div class="swiper-container landingSlider">
@@ -948,22 +950,22 @@
                             </svg>
                         </div>
                     </div>
-                    <form action="">
+                    <form asp-controller="Home" asp-action="SendEmail">
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Type Here">
+                            <input type="text" class="form-control" asp-for="FullName" placeholder="Type Here">
                         </div>
                         <div class="form-group">
                             <label for="email">Your E-mail</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Type Here">
+                            <input type="email" class="form-control" asp-for="Email" placeholder="Type Here">
                         </div>
                         <div class="form-group">
                             <label for="subject">Your Subject</label>
-                            <input type="text" class="form-control" id="subject" name="subject" placeholder="Type Here">
+                            <input type="text" class="form-control" asp-for="Subject" placeholder="Type Here">
                         </div>
                         <div class="form-group">
                             <label for="message">Your Message</label>
-                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Type Here"></textarea>
+                            <textarea class="form-control" asp-for="Message" rows="5" placeholder="Type Here"></textarea>
                         </div>
                         <button type="submit">Send Message</button>
                     </form>
