@@ -21,7 +21,7 @@
   const landingSlider = new Swiper(".landingSlider", {
     pagination: {
       el: ".swiper-pagination",
-      type: "progressbar",
+      //type: "progressbar",
     },
     navigation: {
       nextEl: ".swiper-button-next",
@@ -143,4 +143,11 @@
   });
 
   $(window).on("load", AOS.refresh());
+
+    $(".linksNavbar li").on("click", function (e) {
+        if (window.matchMedia("(max-width: 767px)").matches) {
+            $(".hamburgerMenu").click();
+        } 
+        
+    });
 });
