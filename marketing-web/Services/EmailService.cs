@@ -30,7 +30,7 @@ namespace marketing_web.Services
                 mailMessage.Subject = contact.Subject;
                 mailMessage.IsBodyHtml = true;
                 mailMessage.Body = "<h1>Subject:" + contact.Subject + "</h1><h3>Email:" + contact.Email + "</h3><br/> <h3>Message:</h3> " + contact.Message;
-                mailMessage.To.Add("ushtrimeemail@gmail.com");
+                mailMessage.To.Add("info@digital-pp.com");
                 await smtpClient.SendMailAsync(mailMessage);
                 return true;
             }

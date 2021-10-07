@@ -119,7 +119,9 @@ body {
   background-color: #000000;
   scroll-margin-top: 200;
 }
-  
+ .swiper-container{
+     overflow-x: hidden;
+ }
 body.navActive ,
 body.formActive {
   overflow: hidden;
