@@ -222,7 +222,7 @@ header .headerInner .headerLogo svg:hover path {
   fill: #268348;
 }
 nav {
-  display: flex;
+  display: flex!important;
   justify-content: center;
   align-items: center;
 }

@@ -1,0 +1,101 @@
+﻿@using marketing_web.ViewModels
+@model ProjectViewModel
+@{
+    ViewData["Title"] = "Portfolio";
+    ViewData["Menu"] = -1;
+}
+
+<section class="portfolio-page pad-tb bg-white" style="padding: 150px 0px;">
+    <div class="container">
+        <div class="comments-block">
+            <h2>Create Project:</h2>
+            <div class="form-block form-blog mt20">
+                <form asp-action="Add" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <label class="text-dark">Name</label>
+                            <input type="text" class="form-control" asp-for="Name" />
+                            <span class="text-danger" asp-validation-for="Name"></span>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label class="text-dark">Category</label>
+                            <input type="text" class="form-control" asp-for="Category" />
+                            <span class="text-danger" asp-validation-for="Category"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 mb-3">
+                            <label class="text-dark">Cover Photo</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" asp-for="CoverPhoto">
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+                            </div>
+                            <span class="text-danger" asp-validation-for="CoverPhoto"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 mb-3">
+                            <label class="text-dark">Description</label>
+                            <textarea id="kt-tinymce-1" placeholder="Write full description..." asp-for="Description"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <label class="text-dark">Client Name</label>
+                            <input type="text" class="form-control" asp-for="ClientName" />
+                            <span class="text-danger" asp-validation-for="ClientName"></span>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label class="text-dark">Address</label>
+                            <input type="text" class="form-control" asp-for="Address" />
+                            <span class="text-danger" asp-validation-for="Address"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12 mb-3">
+                            <label class="text-dark">Client Logo</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" asp-for="ClientLogo">
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+                            </div>
+                            <span class="text-danger" asp-validation-for="ClientLogo"></span>
+                        </div>
+                    </div>
+
+                    <div class="fieldsets mt10">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<partial name="~/Views/Shared/_ValidationScriptsPartial.cshtml" />
+
+@section Scripts
+{
+    <script>
+        $(function () {
+            AOS.init();
+            $(".custom-file-input").on("change", function () {
+                var fileName = $(this).val().split("\\").pop();
+                $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            });
+
+            tinymce.init({
+                selector: '#kt-tinymce-1',
+                height: 450,
+                menubar: false,
+                toolbar: ['styleselect',
+                    'undo redo | cut copy paste | bold italic underline forecolor backcolor | link image | alignleft aligncenter alignright alignjustify',
+                    'bullist numlist | outdent indent | blockquote subscript superscript | advlist | autolink | lists charmap | print preview |  code'],
+                plugins: 'advlist autolink link image lists charmap print preview code textcolor',
+                content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+            });
+
+        });
+    </script>
+}

@@ -1,4 +1,4 @@
-﻿$(document).ready(function () { 
+﻿$(document).ready(function () {
   setTimeout(function () {
     $(".loader-wrapper").addClass("removeLoader");
     AOS.init();
@@ -18,6 +18,7 @@
   setTimeout(() => {
     $(".loader-wrapper").remove();
   }, 2200);
+
   const landingSlider = new Swiper(".landingSlider", {
     pagination: {
       el: ".swiper-pagination",

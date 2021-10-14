@@ -1,0 +1,75 @@
+﻿@model Projects
+@{ 
+    ViewData["Title"] = "Portfolio";
+    ViewData["Menu"] = 1; 
+}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href="~/Login/css/style.css" rel="stylesheet">
+
+<section class="portfolio-page pad-tb bg-white" style="padding: 150px 0px;">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-12">
+                <div class="common-heading pp p-details">
+                    <span>@Model.Category</span>
+                    <h1>
+                        @Model.Name
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a asp-controller="Portfolio" asp-action="Update" asp-route-id="@Model.Id" class="mr-2">
+                                <svg style="fill: blue;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18 14.45v6.55h-16v-12h6.743l1.978-2h-10.721v16h20v-10.573l-2 2.023zm1.473-10.615l1.707 1.707-9.281 9.378-2.23.472.512-2.169 9.292-9.388zm-.008-2.835l-11.104 11.216-1.361 5.784 5.898-1.248 11.103-11.218-4.536-4.534z" /></svg>
+                            </a>
+                        }
+                    </h1>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div>
+                    <img src="@Model.CoverPhoto" class="shadow-sm img-fluid" />
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="portfolio-details">
+                    <div class="portfolio-meta link-hover">
+                        <ul>
+                            <li>
+                                <i class="fas fa-user"></i>
+                                <p>
+                                    Client Name:
+                                    <span class="d-flex align-items-center">
+                                        <img src="@Model.ClientLogo" width="50" class="pr-2" />
+                                        @Model.ClientName
+                                    </span>
+                                </p>
+                            </li>
+                            <li>
+                                <i class="fas fa-tags"></i>
+                                <p>Project Category: <span>@Model.Category</span></p>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p>Address: <span>@Model.Address</span></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-lg-12">
+                <h2>About</h2>
+            </div>
+            <div class="col-lg-12 mt-2">
+                @Html.Raw(Model.Description)
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            AOS.init();
+        });
+    </script>
+}

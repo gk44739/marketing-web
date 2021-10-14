@@ -1,0 +1,55 @@
+﻿@media only screen and (max-width: 400px) {
+    .clients-logo img{
+        max-width: 100%!important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .addMargin {
+        margin-top: 1rem !important;
+    }
+}
+
+@media only screen and (min-width: 990px) {
+    .kreni-img{
+        max-width: 330px;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    .removeMargin {
+        margin-top: 0px !important;
+    }
+}
+
+
+@media only screen and (max-width: 770px) {
+    .photo {
+        width: 100%;
+    }
+}
+
+.person {
+    filter: grayscale(30%);
+}
+
+.person:hover {
+    filter: grayscale(0%);
+}
+
+.tagify{
+    background: white;
+}
+.owl-dots{
+    padding-top: 20px;
+    text-align: center;
+}
+
+.nav-close .nav-item-wrapper a {
+    height: 70px;
+    background-image: url("../images/content/INNO-logo-FINALE.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: 120px !important;
+    background-position: left center !important;
+    background-position-x: 20px !important;
+}

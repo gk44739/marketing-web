@@ -1,0 +1,56 @@
+﻿@{ Layout = null; }
+@using marketing_web.ViewModels
+@model SignInViewModel
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>DigitalPlus - Login</title>
+    <meta name="description" content="Creative Agency, Marketing Agency Template">
+    <meta name="keywords" content="Creative Agency, Marketing Agency">
+    <meta name="author" content="rajesh-doot">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#101010">
+    <link href="~/favicon.ico" rel="icon">
+    <link href="~/Login/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Login/css/plugin.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- template-style-->
+    <link href="~/Login/css/style.css" rel="stylesheet">
+    <link href="~/Login/css/responsive.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <!--Start login Form-->
+    <section class="login-page pad-tb">
+        <div class="v-center m-auto">
+            <a asp-controller="Account" asp-action="Index" class="d-block text-center mb30"><img width="200" src="~/img/logo.png" alt="Logo" class="mega-darks-logo"></a>
+            <div class="login-form-div">
+                <h4 class="mb40 text-center">Login to your Account</h4>
+                <div class="form-block">
+                    <form asp-action="Login" method="post">
+                        <div class="fieldsets row">
+                            <div class="col-md-12 form-group">
+                                <input type="text" placeholder="Username" asp-for="Username">
+                                <span class="text-danger" asp-validation-for="Username"></span>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <input type="password" placeholder="Password" asp-for="Password">
+                                <span class="text-danger" asp-validation-for="Password"></span>
+                            </div>
+                        </div>
+                        <div class="fieldsets row mt20 mb30">
+                            <div class="col-md-6 form-group v-center">
+                                <button type="submit" class="lnk btn-main bg-btn">Submit <span class="circle"></span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

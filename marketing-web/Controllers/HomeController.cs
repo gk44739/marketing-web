@@ -15,17 +15,23 @@ namespace marketing_web.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IEmailService _emailService;
+        private readonly IProjectRepository _projectRepository;
 
         public HomeController(ILogger<HomeController> logger,
-                              IEmailService emailService)
+                              IEmailService emailService,
+                              IProjectRepository projectRepository)
         {
             _logger = logger;
             _emailService = emailService;
+            _projectRepository = projectRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var model = new HomeViewModel();
+            var projects = _projectRepository.GetAllProjects().Take(5).ToList();
+            model.Projects = projects;
+            return View(model);
         }
 
         public IActionResult Privacy()
