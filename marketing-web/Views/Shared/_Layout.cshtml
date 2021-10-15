@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="~/css/main.css" />
     <link rel="stylesheet" href="~/css/responsive.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <link href="~/assets/SweetAlert/sweetalert2.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -38,17 +39,17 @@
 
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <li>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Admin
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" asp-controller="Portfolio" asp-action="List">Portfolio</a>
-                                        <a class="dropdown-item" asp-controller="Account" asp-action="Logout">Logout</a>
-                                    </div>
+                        <li>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Admin
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" asp-controller="Portfolio" asp-action="List">Portfolio</a>
+                                    <a class="dropdown-item" asp-controller="Account" asp-action="Logout">Logout</a>
                                 </div>
-                            </li>
+                            </div>
+                        </li>
                         }
                     </ul>
                 </nav>
@@ -145,6 +146,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script src="~/assets/SweetAlert/sweetalert2.all.min.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 
