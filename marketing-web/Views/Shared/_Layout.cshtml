@@ -22,19 +22,19 @@
         <div class="container">
             <div class="headerInner">
                 <div class="headerLogo" data-aos="fade-down" data-aos-delay="100">
-                    <a asp-controller="Home" asp-action="Index">
+                    <a href="/Home/Index/#Home">
                         <img src="~/img/logo.png" alt="Digital Plus Logo">
                     </a>
                 </div>
                 <nav>
                     <ul class="linksNavbar align-items-lg-center">
-                        <li data-aos="fade-right" data-aos-delay="100"><a href="/Home/Index/#Home" class="active">Home</a></li>
-                        <li data-aos="fade-right" data-aos-delay="200"><a href="/Home/Index/#Services">Services</a></li>
-                        <li data-aos="fade-right" data-aos-delay="300"><a href="/Home/Index/#Works">Works</a></li>
-                        <li data-aos="fade-right" data-aos-delay="400"><a href="/Home/Index/#About">About</a></li>
-                        <li data-aos="fade-right" data-aos-delay="500"><a href="/Home/Index/#Clients">Clients</a></li>
-                        <li data-aos="fade-right" data-aos-delay="600"><a href="/Home/Index/#Blogs">Blog</a></li>
-                        <li data-aos="fade-right" data-aos-delay="700"><a class="buttonHeader">Contact</a></li>
+                        <li class="headerItem" data-aos="fade-right" data-aos-delay="100"><a href="/Home/Index/#Home" class="active">Home</a></li>
+                        <li class="headerItem" data-aos="fade-right" data-aos-delay="200"><a href="/Home/Index/#Services">Services</a></li>
+                        <li class="headerItem" data-aos="fade-right" data-aos-delay="300"><a href="/Home/Index/#Works">Works</a></li>
+                        <li class="headerItem" data-aos="fade-right" data-aos-delay="400"><a href="/Home/Index/#About">About</a></li>
+                        <li class="headerItem" data-aos="fade-right" data-aos-delay="500"><a href="/Home/Index/#Clients">Clients</a></li>
+                        <li class="headerItem" data-aos="fade-right" data-aos-delay="600"><a href="/Home/Index/#Blogs">Blog</a></li>
+                        <li class="headerItem" data-aos="fade-right" data-aos-delay="700"><a class="buttonHeader">Contact</a></li>
 
                         @if (User.Identity.IsAuthenticated)
                         {

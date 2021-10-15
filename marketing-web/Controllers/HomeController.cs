@@ -26,6 +26,11 @@ namespace marketing_web.Controllers
             _projectRepository = projectRepository;
         }
 
+        public IActionResult Default()
+        {
+            return Redirect("/Home/Index/#Home");
+        }
+
         public IActionResult Index()
         {
             var model = new HomeViewModel();

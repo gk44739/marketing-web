@@ -145,7 +145,7 @@
 
   $(window).on("load", AOS.refresh());
 
-    $(".linksNavbar li").on("click", function (e) {
+    $(".linksNavbar .headerItem").on("click", function (e) {
         if (window.matchMedia("(max-width: 767px)").matches) {
             $(".hamburgerMenu").click();
         } 
