@@ -9,6 +9,11 @@ namespace marketing_web.Models
 {
     public partial class Projects
     {
+        public Projects()
+        {
+            ProjectFiles = new HashSet<ProjectFiles>();
+        }
+
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -17,9 +22,12 @@ namespace marketing_web.Models
         public string ClientName { get; set; }
         public string ClientLogo { get; set; }
         public string Address { get; set; }
+        public bool IsDeleted { get; set; }
         public DateTime InsertedDate { get; set; }
         public string InsertedFrom { get; set; }
         public DateTime? ModifiedDate { get; set; }
         public string ModifiedFrom { get; set; }
+
+        public virtual ICollection<ProjectFiles> ProjectFiles { get; set; }
     }
 }

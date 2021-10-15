@@ -13,14 +13,17 @@ namespace marketing_web.Controllers
     public class PortfolioController : Controller
     {
         private readonly IProjectRepository _projectRepository;
+        private readonly IRepository<ProjectFiles> _projectFilesRepository;
         private readonly IUploadService _uploadService;
         private readonly IUserService _userService;
 
         public PortfolioController(IProjectRepository projectRepository,
+                                   IRepository<ProjectFiles> projectFilesRepository,
                                    IUploadService uploadService,
                                    IUserService userService)
         {
             _projectRepository = projectRepository;
+            _projectFilesRepository = projectFilesRepository;
             _uploadService = uploadService;
             _userService = userService;
         }
@@ -91,6 +94,33 @@ namespace marketing_web.Controllers
                 model.ClientLogo = clientLogo;
 
                 await _projectRepository.Update(model);
+
+                var files = Request.Form.Files;
+                if (files.Count() > 0)
+                {
+                    var otherImages = new List<ProjectFiles>();
+                    foreach (var image in files)
+                    {
+                        if (image.Name != "CoverPhoto" && image.Name != "ClientLogo")
+                        {
+                            var newImage = new ProjectFiles();
+                            newImage.ProjectId = model.Id;
+                            var filePath = await _uploadService.Upload(image, "Projects", model.Id.ToString());
+                            newImage.FilePath = filePath;
+                            newImage.InsertedDate = DateTime.Now;
+                            newImage.InsertedFrom = _userService.GetUserId();
+
+                            otherImages.Add(newImage);
+                        }
+                    }
+                    if (otherImages.Count() > 0)
+                    {
+                        _projectFilesRepository.AddRange(otherImages);
+                        await _projectFilesRepository.SaveChanges();
+                    }
+
+                }
+
             }
             else
             {
@@ -100,9 +130,9 @@ namespace marketing_web.Controllers
         }
 
         [Authorize]
-        public async Task<IActionResult> Update(int id)
+        public IActionResult Update(int id)
         {
-            var model = await _projectRepository.GetById(id);
+            var model = _projectRepository.GetProjectById(id);
 
             var viewModel = new ProjectUpdateViewModel();
             viewModel.Id = model.Id;
@@ -113,6 +143,7 @@ namespace marketing_web.Controllers
             viewModel.ClientLogoPath = model.ClientLogo;
             viewModel.ClientName = model.ClientName;
             viewModel.Address = model.Address;
+            viewModel.ProjectFiles = model.ProjectFiles.ToList();
 
             return View(viewModel);
         }
@@ -145,6 +176,33 @@ namespace marketing_web.Controllers
                 }
 
                 await _projectRepository.Update(model);
+
+                var files = Request.Form.Files;
+                if (files.Count() > 0)
+                {
+                    var otherImages = new List<ProjectFiles>();
+                    foreach (var image in files)
+                    {
+                        if (image.Name != "CoverPhoto" && image.Name != "ClientLogo")
+                        {
+                            var newImage = new ProjectFiles();
+                            newImage.ProjectId = model.Id;
+                            var filePath = await _uploadService.Upload(image, "Projects", model.Id.ToString());
+                            newImage.FilePath = filePath;
+                            newImage.InsertedDate = DateTime.Now;
+                            newImage.InsertedFrom = _userService.GetUserId();
+
+                            otherImages.Add(newImage);
+                        }
+                    }
+                    if (otherImages.Count() > 0)
+                    {
+                        _projectFilesRepository.AddRange(otherImages);
+                        await _projectFilesRepository.SaveChanges();
+                    }
+
+                }
+
             }
             else
             {
@@ -156,12 +214,30 @@ namespace marketing_web.Controllers
         [Authorize]
         public async Task<IActionResult> Delete(int id)
         {
-            var model = await _projectRepository.GetById(id);
+            var model = _projectRepository.GetProjectById(id);
+            if (model.ProjectFiles.Count() > 0)
+            {
+                foreach (var item in model.ProjectFiles)
+                {
+                    _uploadService.Remove(item.FilePath);
+                }
+            }
             _uploadService.Remove(model.CoverPhoto);
             _uploadService.Remove(model.ClientLogo);
-            _projectRepository.Remove(model);
-            await _projectRepository.SaveChanges();
+            model.IsDeleted = true;
+            await _projectRepository.Update(model);
             return RedirectToAction("List");
+        }
+
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> DeleteFile(int id)
+        {
+            var model = await _projectFilesRepository.GetById(id);
+            _uploadService.Remove(model.FilePath);
+            _projectFilesRepository.Remove(model);
+            await _projectFilesRepository.SaveChanges();
+            return Json(id);
         }
     }
 }

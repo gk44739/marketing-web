@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="~/css/responsive.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
     <link href="~/assets/SweetAlert/sweetalert2.min.css" rel="stylesheet" />
+    <link href="~/assets/Dropzone/dropzone.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -39,17 +40,17 @@
 
                         @if (User.Identity.IsAuthenticated)
                         {
-                        <li>
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Admin
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" asp-controller="Portfolio" asp-action="List">Portfolio</a>
-                                    <a class="dropdown-item" asp-controller="Account" asp-action="Logout">Logout</a>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Admin
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" asp-controller="Portfolio" asp-action="List">Portfolio</a>
+                                        <a class="dropdown-item" asp-controller="Account" asp-action="Logout">Logout</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
+                            </li>
                         }
                     </ul>
                 </nav>
@@ -65,6 +66,14 @@
     <main>
         @RenderBody()
     </main>
+
+    <div class="modal center-modal fade" id="modalLoading" tabindex="-1" style="display: none;" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog  modal-dialog-centered justify-content-center" style="text-align: center">
+            <object type="image/svg+xml" data="~/img/Loading.svg">
+                Loading...
+            </object>
+        </div>
+    </div>
 
     <footer>
         <div class="innerFooter">
@@ -145,8 +154,10 @@
     <script src="~/assets/tinymce/tinymce.bundle.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/loading.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
     <script src="~/assets/SweetAlert/sweetalert2.all.min.js"></script>
+    <script src="~/assets/Dropzone/dropzone.min.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 

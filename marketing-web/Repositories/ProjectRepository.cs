@@ -19,13 +19,13 @@ namespace marketing_web.Repositories
 
         public IEnumerable<Projects> GetAllProjects()
         {
-            var model = _dbContext.Projects.OrderByDescending(t => t.InsertedDate);
+            var model = _dbContext.Projects.Where(t => t.IsDeleted == false).OrderByDescending(t => t.InsertedDate);
             return model;
         }
 
         public Projects GetProjectById(int id)
         {
-            var model = _dbContext.Projects.Where(t => t.Id == id).FirstOrDefault();
+            var model = _dbContext.Projects.Include(t => t.ProjectFiles).Where(t => t.Id == id).FirstOrDefault();
             return model;
         }
     }

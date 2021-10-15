@@ -26,6 +26,7 @@ namespace marketing_web.Models
         public virtual DbSet<AspNetUserRoles> AspNetUserRoles { get; set; }
         public virtual DbSet<AspNetUserTokens> AspNetUserTokens { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
+        public virtual DbSet<ProjectFiles> ProjectFiles { get; set; }
         public virtual DbSet<Projects> Projects { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -127,6 +128,25 @@ namespace marketing_web.Models
                 entity.Property(e => e.NormalizedUserName).HasMaxLength(256);
 
                 entity.Property(e => e.UserName).HasMaxLength(256);
+            });
+
+            modelBuilder.Entity<ProjectFiles>(entity =>
+            {
+                entity.Property(e => e.FilePath)
+                    .IsRequired()
+                    .HasMaxLength(150);
+
+                entity.Property(e => e.InsertedDate).HasColumnType("datetime");
+
+                entity.Property(e => e.InsertedFrom)
+                    .IsRequired()
+                    .HasMaxLength(128);
+
+                entity.HasOne(d => d.Project)
+                    .WithMany(p => p.ProjectFiles)
+                    .HasForeignKey(d => d.ProjectId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ProjectFiles_Projects");
             });
 
             modelBuilder.Entity<Projects>(entity =>

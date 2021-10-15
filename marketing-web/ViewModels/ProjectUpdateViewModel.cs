@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using marketing_web.Models;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -24,6 +25,7 @@ namespace marketing_web.ViewModels
         public string ClientLogoPath { get; set; }
         [Required]
         public string Address { get; set; }
+        public List<ProjectFiles> ProjectFiles { get; set; }
         public DateTime InsertedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
     }
